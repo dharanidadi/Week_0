@@ -3,8 +3,8 @@
 For using ROS framework Ubuntu is necessary:
 (It's Preferable that you install Ubuntu 20.04)
 Follow this [Tutorial](https://towardsdatascience.com/how-to-dual-boot-windows-10-and-linux-ubuntu-20-04-lts-in-a-few-hassle-free-steps-f0e465c3aafd) or this [Video Tutorial](https://www.youtube.com/watch?v=-iSAyiicyQY) to install ubuntu in your laptop.  
-<span style="color:red">[WARNING], Do at your own risk! We will be not responsible if you lose your data. __Follow instructions carefully and make backups before you start!__</span>
-<span>If you're not sure if you want to dual boot, you can install a virtual machine and install ubuntu on that. Follow this [Tutorial](https://www.youtube.com/watch?v=x5MhydijWmc) in that case. (Installation of the Virtual Machine is also included in the tutorial)__</span>
+<span style="color:red">[WARNING], Do at your own risk! We will be not responsible if you lose your data. __Follow instructions carefully and make backups before you start!__</span> <br />
+If you're not sure if you want to dual boot or not, you can install a virtual machine and install ubuntu on that. Follow this [Tutorial](https://www.youtube.com/watch?v=x5MhydijWmc) in that case. (Installation of the Virtual Machine is also included in the tutorial)
 
 * __Get familiar with Linux__:
 Here are a few resources that you can refer to in order to get familiar with Linux:
