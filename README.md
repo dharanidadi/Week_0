@@ -130,22 +130,39 @@ Message passing in ROS happens with the Publisher Subscriber Interface provided 
 
 ##### Writing a simeple publisher node
 
-This is the basic publisher python script:
+This is the basic publisher node python script:
 
 ```python
 #!/usr/bin/env python
 # license removed for brevity
+
+#import the rospy package and the String message type 
 import rospy
 from std_msgs.msg import String
 
+#function to publish messages at the rate of 10 per second
 def talker():
+    #define a topic to which the messages will be published
     pub = rospy.Publisher('chatter', String, queue_size=10)
+    
+    #initialize the Publisher node
+    #Setting anonymous=True will append random integers at the end of the publisher node
     rospy.init_node('talker', anonymous=True)
+    
+    #publishes at a rate of 2 messages per second
     rate = rospy.Rate(10) # 10hz
+    
+    #Keep publishing the messages until the user interrupts
     while not rospy.is_shutdown():
         hello_str = "hello world %s" % rospy.get_time()
+	
+	#display the message on the terminal
         rospy.loginfo(hello_str)
+	
+	#publish the message to the topic
         pub.publish(hello_str)
+	
+	#rate.sleep() will help wait long enough to maintain the desired rate through the loop
         rate.sleep()
 
 if __name__ == '__main__':
