@@ -126,7 +126,11 @@ Finally, a node can contain many publishers and subscribers for many different t
 
 #### Publisher Subscriber Interface
 
-Message passing in ROS happens with the Publisher Subscriber Interface provided by ROS library functions
+Message passing in ROS happens with the Publisher Subscriber Interface provided by ROS library functions.
+
+Creating a publisher or subscriber node is just like creating any other node. <br />
+Go to the package (where you want to create these nodes), make a new directory or folder (Let us follow the convention followed in the official ROS tutorials and call the new folder "scripts"). Add the publisher node python script and the subscriber node python script in this new folder scripts.
+
 
 ##### Writing a simple Publisher Node
 
@@ -204,6 +208,15 @@ if __name__ == '__main__':
     
 ```
 
+We have to make the python scripts executable. The command for that:
+
+```python
+
+chmod +x <name of the python script>.py
+
+```
+
+Here, in place of <name of the python script>, put the name of the name of the python script you add to the folder. You should run this command everytime you add a python script to the package.
 
 
 #### Services
