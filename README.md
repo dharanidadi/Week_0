@@ -216,7 +216,7 @@ chmod +x <name of the python script>.py
 
 ```
 
-Here, in place of '<name of the python script>', put the name of the python script that is added to the folder. You should run this command everytime you add a python script to the package.
+Here, in place of "name of the python script", put the name of the python script that is added to the folder. You should run this command everytime you add a python script to the package.
 	
 And, add this snippet
 ```python
