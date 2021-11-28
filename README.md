@@ -113,7 +113,7 @@ Common ROS tools:
 There are tools like `rostopic` and `rqt_graph` which can be used to visualize the nodes’ communication in the current channels and their message transactions.
 
 #### Topics
-You use a topic when you need to send a data stream. The data stream is unidirectional. Some nodes can publish on the topic, some nodes can subscribe to the topic. There is no response from a subscriber to a publisher, the data is only going one way.
+You use a topic when you need to send a data stream. The data stream is unidirectional. Some nodes can **publish** on the topic, some nodes can **subscribe** to the topic. There is no response from a subscriber to a publisher, the data is only going one way.
 
 A topic has a message type. All publishers and subscribers on this topic must use the message type associated with the topic.
 
@@ -123,6 +123,38 @@ When a node wants to publish something, it will inform the ROS master. When anot
 (The rosmaster package implements the ROS Master. Most programs will not need to interact with this package directly. The rosmaster is run automatically whenever `roscore` is run and all communication with the Master happens over XMLRPC APIs.)
 
 Finally, a node can contain many publishers and subscribers for many different topics.
+
+#### Publisher Subscriber Interface
+
+Message passing in ROS happens with the Publisher Subscriber Interface provided by ROS library functions
+
+##### Writing a simeple publisher node
+
+This is the basic publisher python script:
+
+```python
+#!/usr/bin/env python
+# license removed for brevity
+import rospy
+from std_msgs.msg import String
+
+def talker():
+    pub = rospy.Publisher('chatter', String, queue_size=10)
+    rospy.init_node('talker', anonymous=True)
+    rate = rospy.Rate(10) # 10hz
+    while not rospy.is_shutdown():
+        hello_str = "hello world %s" % rospy.get_time()
+        rospy.loginfo(hello_str)
+        pub.publish(hello_str)
+        rate.sleep()
+
+if __name__ == '__main__':
+    try:
+        talker()
+    except rospy.ROSInterruptException:
+        pass
+
+```
 
 #### Services
 
