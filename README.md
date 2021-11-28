@@ -128,7 +128,7 @@ Finally, a node can contain many publishers and subscribers for many different t
 
 Message passing in ROS happens with the Publisher Subscriber Interface provided by ROS library functions
 
-##### Writing a simeple publisher node
+##### Writing a simple publisher node
 
 This is the basic publisher node python script:
 
