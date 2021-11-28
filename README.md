@@ -216,8 +216,26 @@ chmod +x <name of the python script>.py
 
 ```
 
-Here, in place of <name of the python script>, put the name of the name of the python script you add to the folder. You should run this command everytime you add a python script to the package.
+Here, in place of '<name of the python script>', put the name of the python script that is added to the folder. You should run this command everytime you add a python script to the package.
+	
+And, add this snippet
+```python
+	
+catkin_install_python(PROGRAMS scripts/<name of the publisher python script>.py scripts/<name of the subscriber python script>.py
+  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
+	
+```
+to your 'CMakeLists.txt'.
+	
+Finally, go to catkin_ws and compile
 
+```python
+	
+cd ~/catkin_ws
+catkin_make
+	
+```
 
 #### Services
 
