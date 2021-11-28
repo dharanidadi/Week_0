@@ -249,41 +249,92 @@ You can directly create service clients and servers inside ROS nodes, using for 
 
 Finally, a service server can only exist once, but can have many clients. And basically, the service will be created when you create the server.
 
+The first step in creating a client/server system is generating an srv file. Follow this [Tutorial](http://wiki.ros.org/ROS/Tutorials/CreatingMsgAndSrv#Creating_a_srv) for that.
+
 ##### Writing a simple Service Node:
 
-This is a basic service node python script (taken from the official ROS tutorials from the website, and comments are added to help you understand the working of each line):
+This is a basic service node python script . In this example, the server adds two integers when requested by a client. (taken from the official ROS tutorials from the website, and comments are added to help you understand the working of each line):
 
 ```python
 
 #!/usr/bin/env python
 
 from __future__ import print_function
-
+#AddTwoIntsResponse is generated from the AddTwoInts.srv file itself
 from beginner_tutorials.srv import AddTwoInts,AddTwoIntsResponse
 import rospy
 
 #function that carries out the required computation (in this case, addition of two integers)
 def handle_add_two_ints(req):
+    # a and b are requested and added (a and b are variables from the service file AddTwoInts.srv)
     print("Returning [%s + %s = %s]"%(req.a, req.b, (req.a + req.b)))
     return AddTwoIntsResponse(req.a + req.b)
 
-    def add_two_ints_server():
+def add_two_ints_server():
 
-        #initialize the server node
-        rospy.init_node('add_two_ints_server')
+    #initialize the server node
+    rospy.init_node('add_two_ints_server')
 
-        # declaring service name: add_two_ints, service type: AddTwoInts, and all requests are      passed to ‘handle_add_two_ints’ function
-        s = rospy.Service('add_two_ints', AddTwoInts, handle_add_two_ints)
-        print("Ready to add two ints.")
+    # declaring service name: add_two_ints, service type: AddTwoInts, and all requests are passed to ‘handle_add_two_ints’ function
+    #this AddTwoInts is comapared with the one in the client file and as a callback function will go into the handle_add_two_ints function
+    s = rospy.Service('add_two_ints', AddTwoInts, handle_add_two_ints)
+    print("Ready to add two ints.")
 
-        #keeps the code from exiting
-        rospy.spin()
+    #keeps the code from exiting
+    rospy.spin()
 
-    if __name__ == "__main__":
-        add_two_ints_server()
+if __name__ == "__main__":
+    add_two_ints_server()
+
   
   ```
 
+##### Writing a simple Client Node:
+ 
+This is a basic client node python script. It requests the server node to perform a task or a computation and recieves a response. (taken from the official ROS tutorials from the website, and comments are added to help you understand the working of each line):
+
+```python
+
+#!/usr/bin/env python
+ 
+from __future__ import print_function
+ 
+import sys
+import rospy
+#messsages are imported from the service folder of the package
+from beginner_tutorials.srv import *
+ 
+def add_two_ints_client(x, y):
+    rospy.wait_for_service('add_two_ints')
+    try:
+        #this is the line that goes onto the service side
+        #the AddTwoInts in this script is compared with the AddTwoInts of the server node script.      
+        add_two_ints = rospy.ServiceProxy('add_two_ints', AddTwoInts)
+        resp1 = add_two_ints(x, y)
+        return resp1.sum
+        #the AddTwoIntsResponse comes back here onto the client’s side and the response is printed.
+    except rospy.ServiceException as e:
+        print("Service call failed: %s"%e)
+ 
+def usage():
+    return "%s [x y]"%sys.argv[0]
+ 
+if __name__ == "__main__":
+    if len(sys.argv) == 3:
+        #these inputs will be read from the terminal into the x and y given below
+        x = int(sys.argv[1])
+        y = int(sys.argv[2])
+    else:
+        print(usage())
+        sys.exit(1)
+    print("Requesting %s+%s"%(x, y))
+    print("%s + %s = %s"%(x, y, add_two_ints_client(x, y)))
+    
+ ```
+ The next steps are similar to the steps followed incase of Publisher and Subscriber nodes.
+ 
+ 
+ A visual representation of nodes, topics, and services:
 
 (Topics will be used for unidirectional data streams, and services will be used when you need a client/server architecture.)
 ![](Nodes-TopicandService.gif)
