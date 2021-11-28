@@ -128,9 +128,9 @@ Finally, a node can contain many publishers and subscribers for many different t
 
 Message passing in ROS happens with the Publisher Subscriber Interface provided by ROS library functions
 
-##### Writing a simple publisher node
+##### Writing a simple Publisher Node
 
-This is the basic publisher node python script:
+This is a basic publisher node python script (taken from the official ROS tutorials from the website, and comments are added to help you understand the working of each line):
 
 ```python
 #!/usr/bin/env python
@@ -168,10 +168,43 @@ def talker():
 if __name__ == '__main__':
     try:
         talker()
+    #to capture the Interrupt signals that could be thrown by rate.sleep()
     except rospy.ROSInterruptException:
         pass
 
 ```
+##### Writing a basic Subscriber Node:
+
+This is a basic subscriber node python script (taken from the official ROS tutorials from the website, and comments are added to help you understand the working of each line):
+
+```python
+
+#!/usr/bin/env python
+import rospy
+from std_msgs.msg import String
+
+#Callback function to print the subscribed data on the terminal
+def callback(data):
+    rospy.loginfo(rospy.get_caller_id() + "I heard %s", data.data)
+
+#Subscriber node function which will subscribe the messages from the Topic
+def listener():
+    
+    #initialize the subscriber node called 'listener'
+    rospy.init_node('listener', anonymous=True)
+    
+    #This is to subscribe to the messages from the topic named 'chatter'
+    rospy.Subscriber("chatter", String, callback)
+
+    # spin() simply keeps python from exiting until this node is stopped
+    rospy.spin()
+
+if __name__ == '__main__':
+    listener()
+    
+```
+
+
 
 #### Services
 
