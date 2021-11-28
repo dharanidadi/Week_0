@@ -173,7 +173,7 @@ if __name__ == '__main__':
         pass
 
 ```
-##### Writing a basic Subscriber Node:
+##### Writing a simple Subscriber Node:
 
 This is a basic subscriber node python script (taken from the official ROS tutorials from the website, and comments are added to help you understand the working of each line):
 
