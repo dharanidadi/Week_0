@@ -211,8 +211,7 @@ def listener():
     rospy.spin()
 
 if __name__ == '__main__':
-    listener()
-    
+    listener()   
 ```
 
 We have to make the python scripts executable. The command for that:
