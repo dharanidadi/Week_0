@@ -92,7 +92,7 @@ Then, hit <kbd>CTRL</kbd>+<kbd>X</kbd>, then, <kbd>Y</kbd>, to save the changes 
 
 Now, you can refer to the [tutorials](http://wiki.ros.org/ROS/Tutorials#Beginner_Level) on ROS wiki for further instructions.
 
-Go through the official tutorials mentioned above and the explanations given below to maintain an intuitive understanding of the concepts.
+Go through the official tutorials mentioned above and the explanations given below to develop an intuitive understanding of the concepts.
 
 
 #### Nodes
