@@ -249,8 +249,46 @@ You can directly create service clients and servers inside ROS nodes, using for 
 
 Finally, a service server can only exist once, but can have many clients. And basically, the service will be created when you create the server.
 
+##### Writing a simple Service Node:
+
+This is a basic service node python script (taken from the official ROS tutorials from the website, and comments are added to help you understand the working of each line):
+
+```python
+
+#!/usr/bin/env python
+
+from __future__ import print_function
+
+from beginner_tutorials.srv import AddTwoInts,AddTwoIntsResponse
+import rospy
+
+#function that carries out the required computation (in this case, addition of two integers)
+def handle_add_two_ints(req):
+    print("Returning [%s + %s = %s]"%(req.a, req.b, (req.a + req.b)))
+    return AddTwoIntsResponse(req.a + req.b)
+
+    def add_two_ints_server():
+
+        #initialize the server node
+        rospy.init_node('add_two_ints_server')
+
+        # declaring service name: add_two_ints, service type: AddTwoInts, and all requests are      passed to ‘handle_add_two_ints’ function
+        s = rospy.Service('add_two_ints', AddTwoInts, handle_add_two_ints)
+        print("Ready to add two ints.")
+
+        #keeps the code from exiting
+        rospy.spin()
+
+    if __name__ == "__main__":
+        add_two_ints_server()
+  
+  ```
+
+
 (Topics will be used for unidirectional data streams, and services will be used when you need a client/server architecture.)
 ![](Nodes-TopicandService.gif)
+
+
 
 #### Parameters
 
