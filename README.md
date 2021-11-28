@@ -16,6 +16,13 @@ Here are a few resources that you can refer to in order to get familiar with Lin
 	- For Ubuntu 18.04: [ROS Melodic Morena](http://wiki.ros.org/melodic/Installation)    
 Go to a particular link and put your first step in the world of ROS.
 
+To install **Terminator**, run the following command in the terminal:  
+```bash
+sudo apt-get install terminator
+```
+It's highly recommended to use this application instead of stock Terminal. You can have tabs or split windows into few terminals.
+
+
 ### **Getting started with the ROS:**
 
 *Now that the installation is done, let’s dive into ROS!*
