@@ -115,8 +115,6 @@ Now, you can refer to the [tutorials](http://wiki.ros.org/ROS/Tutorials#Beginner
 
 Go through the official tutorials mentioned above and the explanations given below to develop an intuitive understanding of the concepts.
 
-***You are free to use a suitabe IDE while creating packages, nodes, etc. The most commonly used IDE is Visual Studio Code. You can install it in your Ubuntu system and install ROS VSCode Extention in the VSCode application.***
-
 #### Nodes
 One of the primary purposes of ROS is to facilitate communication between the ROS nodes. Every program in ROS is called a **node**. Every independent task can be separated into nodes which communicate with each other through channels. These channels are also known as **topics**.
 
