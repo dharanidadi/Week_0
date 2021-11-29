@@ -205,7 +205,7 @@ cd launch
 ```
 
 (Let us use the 'turtlesim_node' node that we had run earlier to help us understand how to write a launch file)
-Create a new launch file called turtlemimic.launch and paste the following:
+Create a new launch file called turtlemimic.launch and paste the following :
 ```xml
 <!--  we start the launch file with the launch tag, so that the file is identified as a launch file -->
 <launch>
