@@ -55,6 +55,10 @@ Go through the beginner level [Tutorials](http://wiki.ros.org/ROS/Tutorials). It
 First of all, let us start with the basics of ROS.
 We are briefing the main concepts below. So, go through the topics in the order that they are mentioned. 
 
+Go through these two tutorials first
+[Configuring your ROS environment](http://wiki.ros.org/ROS/Tutorials/InstallingandConfiguringROSEnvironment)
+[Navigating the ROS filesystem](http://wiki.ros.org/ROS/Tutorials/NavigatingTheFilesystem)
+
 ##### **What is a package?** 
 
 ROS uses **packages** to organize its programs. You can think of a package as **all the files that a specific ROS program contains**; all its CPP files, python files, configuration files, compilation files, launch files, and parameter files. All those files in the package are organized with the following structure:
@@ -111,9 +115,28 @@ nano .bashrc	# open the .bashrc file
 Add the command `source ~/catkin_ws/devel/setup.bash` to the end of *.bashrc*.  
 Then, hit <kbd>CTRL</kbd>+<kbd>X</kbd>, then, <kbd>Y</kbd>, to save the changes to the file.
 
-Now, you can refer to the [tutorials](http://wiki.ros.org/ROS/Tutorials#Beginner_Level) on ROS wiki for further instructions.
+##### Creating a new catkin package
 
-Go through the official tutorials mentioned above and the explanations given below to develop an intuitive understanding of the concepts.
+Since your workspace has already been created, navigate to that workspace.
+```bash
+cd ~/catkin_ws/src
+```
+New packages are created using the `catkin_create_pkg`.The `catkin_create_pkg` requires you to provide a package name and a list of dependencies (optional) on which the package depends.
+```bash
+# This is an example, do not try to run this
+# catkin_create_pkg <package_name> [depend1] [depend2] [depend3]
+```
+Now let us create a package named 'beginner_tutorials'.
+```bash
+catkin_create_pkg beginner_tutorials std_msgs rospy roscpp
+```
+Now build (or compile) the packages in the catkin workspace
+```bash
+cd ~/catkin_ws
+```
+```bash
+catkin_make
+```
 
 #### Nodes
 One of the primary purposes of ROS is to facilitate communication between the ROS nodes. Every program in ROS is called a **node**. Every independent task can be separated into nodes which communicate with each other through channels. These channels are also known as **topics**.
