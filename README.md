@@ -6,7 +6,7 @@
 1. This can serve as an introduction to be able to understand the ROS documentation of complex ROS packages for object recognition, text to speech, navigation and all the other areas where ROS developed code.
 
 
-# Week_0
+# EPISODE 0 - A study in ROSe
 
 * __Ubuntu Installation__ :
 For using ROS framework Ubuntu is necessary. So, follow any of the four alternatives for setting up the linux environment:
@@ -15,7 +15,7 @@ For using ROS framework Ubuntu is necessary. So, follow any of the four alternat
 <span style="color:red">[WARNING], Do at your own risk! We will be not responsible if you lose your data. __Follow instructions carefully and make backups before you start!__</span> <br />
 **Virtual Machine** : You can install a virtual machine and install ubuntu on that. Follow this [Tutorial](https://www.youtube.com/watch?v=x5MhydijWmc) in that case. (Installation of the Virtual Machine is also included in the tutorial)
 **WSL** : Follow this [Tutorial](https://www.windowscentral.com/install-windows-subsystem-linux-windows-10) to install WSL on your windows system.
-
+**The Construct website** : You are also free to use [**theconstructsim**](https://www.theconstructsim.com/) without having to install anything. The Construct is an online platform that supports ROS development.
 
 * __Get familiar with Linux__:
 Here are a few resources that you can refer to in order to get familiar with Linux:
@@ -32,6 +32,8 @@ It's highly recommended to use this application instead of stock Terminal. You c
 	- For Ubuntu 20.04: [ROS Noetic Ninjemys](http://wiki.ros.org/noetic/Installation/Ubuntu)
 	- For Ubuntu 18.04: [ROS Melodic Morena](http://wiki.ros.org/melodic/Installation)    
 Go to a particular link and put your first step in the world of ROS.
+
+***You are free to use a suitabe IDE to write code. The most commonly used IDE is Visual Studio Code. You can install it in your Ubuntu system and install ROS VSCode Extention in the VSCode application.***
 
 
 ### **Getting started with the ROS:**
@@ -50,7 +52,8 @@ The official definition on ROS wiki is:
 First of all, let us start with the basics of ROS.
 Go through the beginner level [Tutorials](http://wiki.ros.org/ROS/Tutorials). It will cover all the basics materials like how to create a package, what is a node and how to make it, what is a publisher and a subscriber? It will give you a detailed introduction to each and every thing. There are **20** parts to this tutorial, go through them all. Don't go to the intermediate level right now if you get done with the beginner level. We will give you an assignment based on these topics. **Write code on your own. Don't copy paste it directly.**  You will grasp the topics covered better when you try the implementation on your own. Assignment will be releasd soon. It's preferable if you use __Python__ instead of __C++__ as python syntax is easier and more readable and you will need it in future for sure, so, better learn it right now. These assignments will require knowledge of only basic python syntax.
 
-Here, we are briefing about what is a package and how to create a package. This is also given in the tutorials, but we are telling this explicitly because it is the most fundamental thing that you have to do when you start with ROS.
+First of all, let us start with the basics of ROS.
+We are briefing the main concepts below. So, go through the topics in the order that they are mentioned. 
 
 ##### **What is a package?** 
 
@@ -86,7 +89,7 @@ cd ~/catkin_ws /src
 
 The *src* directory is the folder that holds created packages. Those could be your own packages or packages that you copied from other sources e.g. A Github Repository.
 
-In order for the ROS system to recognize the packages in your *catkin_ws*, it needs to be on the ROS file path. ROS file path is an Ubuntu environment variable that holds the paths to ROS packages. To add our *catkin_ws* to the ROS file path follow the following instructions.
+In order for the ROS system to recognize the packages in your *catkin_ws*, it needs to be on the ROS file path. ROS file path is an Ubuntu environment variable that holds the paths to ROS packages. To add our *catkin_ws* to the ROS file path, follow the following instructions.
 
 First, build (compile) your workspace. It’s OK to build the *catkin_ws*  even if it has no packages. After the build process, some new folders will appear inside your *catkin_ws* . One of the folders, called *catkin_ws* /devel contains a setup file that will be used to add the path of the *catkin_ws*  to the ROS file path. Build the *catkin_ws*  using the catkin build inside the *catkin_ws* :
 
