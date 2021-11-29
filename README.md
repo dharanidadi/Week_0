@@ -55,8 +55,8 @@ Go through the beginner level [Tutorials](http://wiki.ros.org/ROS/Tutorials). It
 First of all, let us start with the basics of ROS.
 We are briefing the main concepts below. So, go through the topics in the order that they are mentioned. 
 
-Go through these two tutorials first
-[Configuring your ROS environment](http://wiki.ros.org/ROS/Tutorials/InstallingandConfiguringROSEnvironment)
+Go through these two tutorials first <br />
+[Configuring your ROS environment](http://wiki.ros.org/ROS/Tutorials/InstallingandConfiguringROSEnvironment) <br />
 [Navigating the ROS filesystem](http://wiki.ros.org/ROS/Tutorials/NavigatingTheFilesystem)
 
 ##### **What is a package?** 
@@ -130,13 +130,23 @@ Now let us create a package named 'beginner_tutorials'.
 ```bash
 catkin_create_pkg beginner_tutorials std_msgs rospy roscpp
 ```
-Now build (or compile) the packages in the catkin workspace
+Build the packages in the catkin workspace
 ```bash
 cd ~/catkin_ws
 ```
 ```bash
+#build the new package created
 catkin_make
 ```
+
+To add the workspace to your ROS environment you need to source the generated setup file:
+```bash
+. ~/catkin_ws/devel/setup.bash
+```
+
+Go through these tutorials: <br />
+[Creating a ROS package](http://wiki.ros.org/ROS/Tutorials/CreatingPackage) <br />
+[Building a ROS package](http://wiki.ros.org/ROS/Tutorials/BuildingPackages)
 
 #### Nodes
 One of the primary purposes of ROS is to facilitate communication between the ROS nodes. Every program in ROS is called a **node**. Every independent task can be separated into nodes which communicate with each other through channels. These channels are also known as **topics**.
@@ -145,7 +155,7 @@ For example, one node can capture the images from a camera and send the images t
 
 The main mechanism used by ROS nodes to communicate is by sending and receiving **messages**. The **messages** are organized into specific categories called **topics**. Nodes may **publish** messages on a particular topic or **subscribe** to a topic to receive information.
 
-Common ROS tools:
+**Important ROS Commands**:
 
 `roscore`:The Main program to initiate ros. It sets up the basic architecture for the channels, allowing nodes to communicate.
 
@@ -154,6 +164,13 @@ Common ROS tools:
 `roslaunch` is used to automate launching multiple nodes at once.
 
 There are tools like `rostopic` and `rqt_graph` which can be used to visualize the nodes’ communication in the current channels and their message transactions.
+
+Command to run a ros node:
+```bash
+rosrun [package_name] [node_name]
+```
+
+Go through this [Tutorial](http://wiki.ros.org/ROS/Tutorials/UnderstandingNodes)
 
 #### Topics
 You use a topic when you need to send a data stream. The data stream is unidirectional. Some nodes can **publish** on the topic, some nodes can **subscribe** to the topic. There is no response from a subscriber to a publisher, the data is only going one way.
@@ -166,6 +183,8 @@ When a node wants to publish something, it will inform the ROS master. When anot
 (The rosmaster package implements the ROS Master. Most programs will not need to interact with this package directly. The rosmaster is run automatically whenever `roscore` is run and all communication with the Master happens over XMLRPC APIs.)
 
 Finally, a node can contain many publishers and subscribers for many different topics.
+
+Go through this [Turtorial](http://wiki.ros.org/ROS/Tutorials/UnderstandingTopics)
 
 #### Publisher Subscriber Interface
 
@@ -253,31 +272,60 @@ if __name__ == '__main__':
 We have to make the python scripts executable. The command for that:
 
 ```python
-
 chmod +x <name of the python script>.py
-
 ```
 
 Here, in place of "name of the python script", put the name of the python script that is added to the folder. You should run this command everytime you add a python script to the package.
 	
 And, add this snippet
-```python
-	
+```python	
 catkin_install_python(PROGRAMS scripts/<name of the publisher python script>.py scripts/<name of the subscriber python script>.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
-)
-	
+)	
 ```
 to your 'CMakeLists.txt'.
 	
-Finally, go to catkin_ws and compile
+Finally, go to catkin_ws and build the package
 
-```python
-	
+```python	
 cd ~/catkin_ws
-catkin_make
-	
+catkin_make	
 ```
+
+Go through this [Tutorial](http://wiki.ros.org/ROS/Tutorials/WritingPublisherSubscriber%28python%29)
+
+##### Running the Publisher and Subscriber:
+
+Make sure the roscore is running
+```bash
+roscore
+```
+
+Source your workspace's setup.sh file (in a new terminal)
+```bash
+ cd ~/catkin_ws
+ source ./devel/setup.bash
+```
+
+To run the Publisher Node:
+```bash
+rosrun beginner_tutorials talker.py
+```
+('talker' is the name of the Publisher Node we created) <br />
+You can see that 'hello world' is being printed. The Publisher Node is up and running!
+
+To run the Subscriber Node (in a new terminal):
+```bash
+rosrun beginner_tutorials listener.py
+```
+('listener' is the name of the Subscriber Node we created) <br />
+You can see that 'heard hello world' is being printed. The Subscriber Node is running as well.
+
+Note that once you stop running the Publisher Node ( Press `Ctrl`+`C` while you're in the terminal that is running the Publisher Node), the Subscriber Node stops running as well. 
+
+Go through this [Tutorial](http://wiki.ros.org/ROS/Tutorials/ExaminingPublisherSubscriber)
+
+#### Using roslaunch
 
 #### Services
 
