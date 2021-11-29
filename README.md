@@ -253,7 +253,7 @@ When a node wants to publish something, it will inform the ROS master. When anot
 
 Finally, a node can contain many publishers and subscribers for many different topics.
 
-Go through this [Turtorial](http://wiki.ros.org/ROS/Tutorials/UnderstandingTopics)
+Go through this [Turtorial](http://wiki.ros.org/ROS/Tutorials/UnderstandingTopics).
 
 #### Publisher Subscriber Interface
 
@@ -361,7 +361,7 @@ cd ~/catkin_ws
 catkin_make	
 ```
 
-Go through this [Tutorial](http://wiki.ros.org/ROS/Tutorials/WritingPublisherSubscriber%28python%29)
+You are required to go through this [Tutorial](http://wiki.ros.org/ROS/Tutorials/WritingPublisherSubscriber%28python%29) as well.
 
 ##### Running the Publisher and Subscriber:
 
@@ -392,7 +392,7 @@ You can see that 'heard hello world' is being printed. The Subscriber Node is ru
 
 Note that once you stop running the Publisher Node ( Press `Ctrl`+`C` while you're in the terminal that is running the Publisher Node), the Subscriber Node stops running as well. 
 
-Go through this [Tutorial](http://wiki.ros.org/ROS/Tutorials/ExaminingPublisherSubscriber)
+Go through this [Tutorial](http://wiki.ros.org/ROS/Tutorials/ExaminingPublisherSubscriber) as well.
 
 
 
