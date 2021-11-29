@@ -9,9 +9,9 @@
 # EPISODE 0 - A study in ROSe
 
 * __Ubuntu Installation__ :
-For using ROS framework Ubuntu is necessary. So, follow any of the four alternatives for setting up the linux environment:
+For using ROS framework, Ubuntu is necessary. So, follow any of the four alternatives for setting up the linux environment:
 (It's Preferable that you install Ubuntu 20.04)<br />
-**Dual-boot**: Follow this [Tutorial](https://towardsdatascience.com/how-to-dual-boot-windows-10-and-linux-ubuntu-20-04-lts-in-a-few-hassle-free-steps-f0e465c3aafd) or this [Video Tutorial](https://www.youtube.com/watch?v=-iSAyiicyQY) to install ubuntu in your laptop.<br />  
+**Dual-boot**: Follow this [Tutorial](https://towardsdatascience.com/how-to-dual-boot-windows-10-and-linux-ubuntu-20-04-lts-in-a-few-hassle-free-steps-f0e465c3aafd) or this [Video Tutorial](https://www.youtube.com/watch?v=-iSAyiicyQY) to install ubuntu in your laptop.
 <span style="color:red">[WARNING], Do at your own risk! We will be not responsible if you lose your data. __Follow instructions carefully and make backups before you start!__</span> <br />
 **Virtual Machine** : You can install a virtual machine and install ubuntu on that. Follow this [Tutorial](https://www.youtube.com/watch?v=x5MhydijWmc) in that case. (Installation of the Virtual Machine is also included in the tutorial)<br />
 **WSL** : Follow this [Tutorial](https://www.windowscentral.com/install-windows-subsystem-linux-windows-10) to install WSL on your windows system.<br />
@@ -50,10 +50,7 @@ The official definition on ROS wiki is:
 #### **Basics of ROS**
 
 First of all, let us start with the basics of ROS.
-Go through the beginner level [Tutorials](http://wiki.ros.org/ROS/Tutorials). It will cover all the basics materials like how to create a package, what is a node and how to make it, what is a publisher and a subscriber? It will give you a detailed introduction to each and every thing. There are **20** parts to this tutorial, go through them all. Don't go to the intermediate level right now if you get done with the beginner level. We will give you an assignment based on these topics. **Write code on your own. Don't copy paste it directly.**  You will grasp the topics covered better when you try the implementation on your own. Assignment will be releasd soon. It's preferable if you use __Python__ instead of __C++__ as python syntax is easier and more readable and you will need it in future for sure, so, better learn it right now. These assignments will require knowledge of only basic python syntax.
-
-First of all, let us start with the basics of ROS.
-We are briefing the main concepts below. So, go through the topics in the order that they are mentioned. 
+We are briefing the main concepts below. So, go through the topics in the order that they are mentioned. **Write code on your own. Don't copy paste it directly.**  You will grasp the topics covered better when you try the implementation on your own.It's preferable if you use __Python__ instead of __C++__ as python syntax is easier and more readable and you will need it in future for sure, so, better learn it right now. The assignments will require knowledge of only basic python syntax.
 
 Go through these two tutorials first <br />
 [Configuring your ROS environment](http://wiki.ros.org/ROS/Tutorials/InstallingandConfiguringROSEnvironment) <br />
@@ -133,9 +130,6 @@ catkin_create_pkg beginner_tutorials std_msgs rospy roscpp
 Build the packages in the catkin workspace
 ```bash
 cd ~/catkin_ws
-```
-```bash
-#build the new package created
 catkin_make
 ```
 
@@ -170,6 +164,7 @@ Usage of rosrun command:
 rosrun [package name] [node_name]
 ```
 
+
 Let us run 'turtlesim_node' node from 'turtlesim' package using `rosrun`:
 
 First, get the roscore running:
@@ -180,9 +175,9 @@ To run the 'turtlesim_node' node, run this **in a different terminal**:
 ```bash
 rosrun turtlesim turtlesim_node
 ```
-You'll see the new turtlesim window
+You'll see the new turtlesim window.
 
-Go through this [Tutorial](http://wiki.ros.org/ROS/Tutorials/UnderstandingNodes)
+You are required go through this [Tutorial](http://wiki.ros.org/ROS/Tutorials/UnderstandingNodes) as well.
 
 ##### Using roslaunch to run multiple nodes at once
 
