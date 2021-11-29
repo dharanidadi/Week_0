@@ -165,12 +165,86 @@ The main mechanism used by ROS nodes to communicate is by sending and receiving 
 
 There are tools like `rostopic` and `rqt_graph` which can be used to visualize the nodes’ communication in the current channels and their message transactions.
 
-Command to run a ros node:
+Usage of rosrun command:
 ```bash
-rosrun [package_name] [node_name]
+rosrun [package name] [node_name]
 ```
 
+Let us run 'turtlesim_node' node from 'turtlesim' package using `rosrun`:
+
+First, get the roscore running:
+```bash
+roscore
+```
+To run the 'turtlesim_node' node, run this **in a different terminal**:
+```bash
+rosrun turtlesim turtlesim_node
+```
+You'll see the new turtlesim window
+
 Go through this [Tutorial](http://wiki.ros.org/ROS/Tutorials/UnderstandingNodes)
+
+##### Using roslaunch to run multiple nodes at once
+
+Usage:
+```bash
+roslaunch [package] [filename.launch]
+```
+
+To make a launch file, first go to the package where you plan on executing multiple nodes. Since we've already created a package 'beginners_tutorials', let us go there.
+```bash
+roscd beginner_tutorials
+```
+(If roscd says something similar to *roscd: No such package/stack 'beginner_tutorials'*, you'll need to source the environment setup file.  
+```bash
+cd ~/catkin_ws
+source devel/setup.bash
+roscd beginner_tutorials
+```
+Run the above commands in the terminal to do that)
+
+Now let's make a launch directory:
+```bash
+mkdir launch
+cd launch
+```
+
+(Let us use the 'turtlesim_node' node that we had run earlier to help us understand how to write a launch file)
+Create a new launch file called turtlemimic.launch and paste the following:
+```xml
+<!--  we start the launch file with the launch tag, so that the file is identified as a launch file -->
+<launch>
+	
+  <!-- Here we start two groups with a namespace tag of turtlesim1 and turtlesim2 with a turtlesim node with a name of sim. This allows us to start two simulators without having name conflicts -->
+  <group ns="turtlesim1">
+    <node pkg="turtlesim" name="sim" type="turtlesim_node"/>
+  </group>
+
+  <group ns="turtlesim2">
+    <node pkg="turtlesim" name="sim" type="turtlesim_node"/>
+  </group>
+  
+  <!-- Here we start the mimic node with the topics input and output renamed to turtlesim1 and turtlesim2. This renaming will cause turtlesim2 to mimic turtlesim1 -->
+  <node pkg="turtlesim" name="mimic" type="mimic">
+    <remap from="input" to="turtlesim1/turtle1"/>
+    <remap from="output" to="turtlesim2/turtle1"/>
+  </node>
+
+</launch>
+```
+
+Now we roslaunch the ros file:
+```bash
+roslaunch beginner_tutorials turtlemimic.launch
+```
+We see two new turtlesim windows now
+
+**In a new terminal**, send the rostopic command:
+```bash
+rostopic pub /turtlesim1/turtle1/cmd_vel geometry_msgs/Twist -r 1 -- '[2.0, 0.0, 0.0]' '[0.0, 0.0, -1.8]'
+```
+We see that the two turtles are moving in a circle, even though the above command was passed to only turtlesim1. That is because the launch file has been written in such a way that the turtlesim2 mimics the turtlesim1.
+
 
 #### Topics
 You use a topic when you need to send a data stream. The data stream is unidirectional. Some nodes can **publish** on the topic, some nodes can **subscribe** to the topic. There is no response from a subscriber to a publisher, the data is only going one way.
@@ -324,127 +398,6 @@ You can see that 'heard hello world' is being printed. The Subscriber Node is ru
 Note that once you stop running the Publisher Node ( Press `Ctrl`+`C` while you're in the terminal that is running the Publisher Node), the Subscriber Node stops running as well. 
 
 Go through this [Tutorial](http://wiki.ros.org/ROS/Tutorials/ExaminingPublisherSubscriber)
-
-#### Using roslaunch
-
-#### Services
-
-A ROS service is a client/server system
-
-Services are another way to pass data between nodes in ROS. Services are just synchronous remote procedure calls, they allow one node to call a function that executes in another node. Service calls are well suited to things that you only need to do occasionally and that take a bounded amount of time to complete.
-
-A service is defined by a name, and a pair of messages. One message is the request, one message is the response. You must respect the format of the data on both sides of the communication.
-
-You can directly create service clients and servers inside ROS nodes, using for example, the roscpp library for c++ and the rospy library for Python.
-
-Finally, a service server can only exist once, but can have many clients. And basically, the service will be created when you create the server.
-
-The first step in creating a client/server system is generating an srv file. Follow this [Tutorial](http://wiki.ros.org/ROS/Tutorials/CreatingMsgAndSrv#Creating_a_srv) for that.
-
-##### Writing a simple Service Node:
-
-This is a basic service node python script . In this example, the server adds two integers when requested by a client. (taken from the official ROS tutorials from the website, and comments are added to help you understand the working of each line):
-
-```python
-
-#!/usr/bin/env python
-
-from __future__ import print_function
-#AddTwoIntsResponse is generated from the AddTwoInts.srv file itself
-from beginner_tutorials.srv import AddTwoInts,AddTwoIntsResponse
-import rospy
-
-#function that carries out the required computation (in this case, addition of two integers)
-def handle_add_two_ints(req):
-    # a and b are requested and added (a and b are variables from the service file AddTwoInts.srv)
-    print("Returning [%s + %s = %s]"%(req.a, req.b, (req.a + req.b)))
-    return AddTwoIntsResponse(req.a + req.b)
-
-def add_two_ints_server():
-
-    #initialize the server node
-    rospy.init_node('add_two_ints_server')
-
-    # declaring service name: add_two_ints, service type: AddTwoInts, and all requests are passed to ‘handle_add_two_ints’ function
-    #this AddTwoInts is comapared with the one in the client file and as a callback function will go into the handle_add_two_ints function
-    s = rospy.Service('add_two_ints', AddTwoInts, handle_add_two_ints)
-    print("Ready to add two ints.")
-
-    #keeps the code from exiting
-    rospy.spin()
-
-if __name__ == "__main__":
-    add_two_ints_server()
-
-  
-  ```
-
-##### Writing a simple Client Node:
- 
-This is a basic client node python script. It requests the server node to perform a task or a computation and recieves a response. (taken from the official ROS tutorials from the website, and comments are added to help you understand the working of each line):
-
-```python
-
-#!/usr/bin/env python
- 
-from __future__ import print_function
- 
-import sys
-import rospy
-#messsages are imported from the service folder of the package
-from beginner_tutorials.srv import *
- 
-def add_two_ints_client(x, y):
-    rospy.wait_for_service('add_two_ints')
-    try:
-        #this is the line that goes onto the service side
-        #the AddTwoInts in this script is compared with the AddTwoInts of the server node script.      
-        add_two_ints = rospy.ServiceProxy('add_two_ints', AddTwoInts)
-        resp1 = add_two_ints(x, y)
-        return resp1.sum
-        #the AddTwoIntsResponse comes back here onto the client’s side and the response is printed.
-    except rospy.ServiceException as e:
-        print("Service call failed: %s"%e)
- 
-def usage():
-    return "%s [x y]"%sys.argv[0]
- 
-if __name__ == "__main__":
-    if len(sys.argv) == 3:
-        #these inputs will be read from the terminal into the x and y given below
-        x = int(sys.argv[1])
-        y = int(sys.argv[2])
-    else:
-        print(usage())
-        sys.exit(1)
-    print("Requesting %s+%s"%(x, y))
-    print("%s + %s = %s"%(x, y, add_two_ints_client(x, y)))
-    
- ```
- The next steps are similar to the steps followed incase of Publisher and Subscriber nodes.
- 
- 
- A visual representation of nodes, topics, and services:
-
-(Topics will be used for unidirectional data streams, and services will be used when you need a client/server architecture.)
-![](Nodes-TopicandService.gif)
-
-
-
-#### Parameters
-
-A centralized parameter server keeps track of a collection of values-things like integers, floating point numbers, strings, or other data-each identified by a short string name.
-
-A ROS parameter is basically just one of the shared variable stored in the parameter server.
-Ex:
-![](parameters.jpg)
-
-In this example, we have 4 nodes included in 3 different packages. As you can see, any node from any package can get access to the ROS parameter server. The only condition is that the nodes should be on the same environment as the ROS master.
-
-When node A is started, it can add a new parameter into the parameter server. If node B starts after node A, node B will have access to this new parameter.
-
-
-
 
 
 
