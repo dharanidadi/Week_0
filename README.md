@@ -100,6 +100,8 @@ First, build (compile) your workspace. It’s OK to build the *catkin_ws*  even 
 cd ~/catkin_ws 	# Navigate to the catkin_ws
 catkin_make	# Build
 ```
+Be patient. Building takes some time.
+
 Now, let’s add the *catkin_ws*  path. Execute the following command while inside *catkin_ws* :
 
 ```bash
@@ -118,12 +120,8 @@ Since your workspace has already been created, navigate to that workspace.
 ```bash
 cd ~/catkin_ws/src
 ```
-New packages are created using the `catkin_create_pkg`.The `catkin_create_pkg` requires you to provide a package name and a list of dependencies (optional) on which the package depends.
-```bash
-# This is an example, do not try to run this
-# catkin_create_pkg <package_name> [depend1] [depend2] [depend3]
-```
-Now let us create a package named 'beginner_tutorials'.
+New packages are created using the `catkin_create_pkg`.The `catkin_create_pkg` requires you to provide a package name and a list of dependencies (optional) on which the package depends. Now let us create a package named 'beginner_tutorials'.
+
 ```bash
 catkin_create_pkg beginner_tutorials std_msgs rospy roscpp
 ```
@@ -162,6 +160,11 @@ rosrun [package name] [node_name]
 ```
 `roslaunch` is used to automate launching multiple nodes at once.
 
+Usage of roslaunch command:
+```bash
+roslaunch [package] [filename.launch]
+```
+
 ### Nodes
 One of the primary purposes of ROS is to facilitate communication between the ROS nodes. Every program in ROS is called a **node**. Every independent task can be separated into nodes which communicate with each other through channels. These channels are also known as **topics**.
 
@@ -171,7 +174,7 @@ The main mechanism used by ROS nodes to communicate is by sending and receiving 
 
 #### Introducing TurtleSim
 
-Let us run 'turtlesim_node' node from 'turtlesim' package using `rosrun`:
+To demonstrate how to run nodes, let us run 'turtlesim_node' node from a pre-installed package, 'turtlesim' using `rosrun`:
 
 First, get the roscore running:
 ```bash
@@ -183,15 +186,10 @@ rosrun turtlesim turtlesim_node
 ```
 You'll see the new turtlesim window.
 
-You are required go through this [Tutorial](http://wiki.ros.org/ROS/Tutorials/UnderstandingNodes) as well.
+Refer to the material in the following link [Tutorial](http://wiki.ros.org/ROS/Tutorials/UnderstandingNodes) as well.
 
 
 #### Using roslaunch to run multiple nodes at once
-
-Usage:
-```bash
-roslaunch [package] [filename.launch]
-```
 
 To make a launch file, first go to the package where you plan on executing multiple nodes. Since we've already created a package 'beginners_tutorials', let us go there.
 ```bash
@@ -260,19 +258,24 @@ When a node wants to publish something, it will inform the ROS master. When anot
 
 Finally, a node can contain many publishers and subscribers for many different topics.
 
-Go through this [Tutorial](http://wiki.ros.org/ROS/Tutorials/UnderstandingTopics).
+For more information about topics, refer to the [Tutorial](http://wiki.ros.org/ROS/Tutorials/UnderstandingTopics).
 
-## Publisher Subscriber Interface
+## Publisher-Subscriber Interface
 
-Message passing in ROS happens with the Publisher Subscriber Interface provided by ROS library functions.
+Message passing in ROS happens with the Publisher-Subscriber Interface provided by ROS library functions.
 
 Creating a publisher or subscriber node is just like creating any other node. <br />
-Go to the package (where you want to create these nodes), make a new directory or folder (Let us follow the convention followed in the official ROS tutorials and call the new folder "scripts"). Add the publisher node python script and the subscriber node python script in this new folder scripts.
+
+1. Go to the package where you want to create these nodes ( in this case ```beginner_tutorials```) 
+
+2. Make a new directory or folder (Let us follow the convention followed in the official ROS tutorials and call the new folder ```scripts```). 
+ 
+3. Create python script files for a publisher ```talker.py``` and a subscriber ```listener.py```
 
 
 ### Writing a simple Publisher Node
 
-This is a basic publisher node python script (taken from the official ROS tutorials from the website, and comments are added to help you understand the working of each line):
+This is a basic publisher node python script ```talker.py```(taken from the official ROS tutorials from the website, and comments are added to help you understand the working of each line):
 
 ```python
 #!/usr/bin/env python
@@ -317,7 +320,7 @@ if __name__ == '__main__':
 ```
 ### Writing a simple Subscriber Node:
 
-This is a basic subscriber node python script (taken from the official ROS tutorials from the website, and comments are added to help you understand the working of each line):
+This is a basic subscriber node python script ```listener.py``` (taken from the official ROS tutorials from the website, and comments are added to help you understand the working of each line):
 
 ```python
 
@@ -345,7 +348,7 @@ if __name__ == '__main__':
     listener()   
 ```
 
-We have to make the python scripts executable. The command for that:
+We have to make the publisher and subscriber python scripts executable. The command for that:
 
 ```python
 chmod +x <name of the python script>.py
@@ -368,7 +371,8 @@ cd ~/catkin_ws
 catkin_make	
 ```
 
-You are required to go through this [Tutorial](http://wiki.ros.org/ROS/Tutorials/WritingPublisherSubscriber%28python%29) as well.
+Refer to the following for more information [Tutorial](http://wiki.ros.org/ROS/Tutorials/WritingPublisherSubscriber%28python%29)
+
 
 ### Running the Publisher and Subscriber:
 
