@@ -80,7 +80,7 @@ ROS uses **packages** to organize its programs. You can think of a package as **
 
 To go to any ROS package, ROS gives you a command called `roscd`. Type:
 
-`roscd <package_name>`
+
 
 It will take you to the path where the package *package_name* is located. `roscd`  is a command which will get you to a ROS package location. `ls`is a command that lists the content of a folder.
 
@@ -165,6 +165,10 @@ The main mechanism used by ROS nodes to communicate is by sending and receiving 
 `roscore`:The Main program to initiate ros. It sets up the basic architecture for the channels, allowing nodes to communicate.
 
 `roscd` is used to go to a specific ROS package
+
+Usage of roscd command:
+
+```roscd <package_name>```
 
 `rosrun` is used to run a single ros program  (node).
 
