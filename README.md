@@ -438,11 +438,11 @@ Note that in this method, there is no need to make sure that ```roscore``` is ru
 
 Create a new package ```sherlock``` in ```catkin_ws```, which will contain three nodes and a launch file.
 
-1) The first node will publish the following text to the topic ```listen_1```
+1) The first node will publish the following text to the topic ```listen_1```.
 
 	**I am not a psychopath, Anderson.**
 
-2) The second node will publish the following text to the topic ```listen_2```
+2) The second node will publish the following text to the topic ```listen_2```.
 
  	**I am a high-functioning sociopath.**
 
@@ -452,7 +452,7 @@ Create a new package ```sherlock``` in ```catkin_ws```, which will contain three
 
 	**I am not a psychopath, Anderson. I am a high-functioning sociopath.**
 
-5) The launch file will launch all the three nodes
+5) The launch file will launch all the three nodes.
 
 <img src="W0_Images/Sherlock.png" width=400 height=220>
 
