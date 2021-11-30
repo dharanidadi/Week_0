@@ -436,22 +436,28 @@ Note that in this method, there is no need to make sure that ```roscore``` is ru
 
 ## Try it out ...
 
-Create a new package with name in the following format NAME_SURNAME. Now, this new package will require three nodes and two launch files.
+Create a new package ```sherlock``` in ```catkin_ws```, which will contain three nodes and a launch file.
 
-1) The first node will publish your NAME(string) to the topic name_listener
+1) The first node will publish the following text to the topic ```listen_1```
 
-2) The second node will publish your PHONE NUMBER(int) to the topic num_listener
+	**I am not a psychopath.**
 
-3) The third node will subscribe both the above topics
+2) The second node will publish the following text to the topic ```listen_2```
 
-4) The first launch file contains two nodes. It contains both of the publisher nodes.
+ 	**I am a high-functioning sociopath.**
 
-5) The second launch file contains the last subscriber node.
+3) The third node will subscribe to ```listen_1``` and ```listen_2```.
 
-6) Your task is to print an assimilated string in the following format:
+4) The third node should display the following statement on the terminal at some frequency.
 
-If you want to contact NAME, then call on this NUMBER.
+	**I am not a psychopath. I am a high-functioning sociopath.**
 
-NAME and NUMBER should be replaced by your own details.
+5) The launch file will launch all the three nodes
+
+<img src="W0_Images/Sherlock.png" width=400 height=220>
+
+Have fun !
+
+
 
 
