@@ -175,6 +175,8 @@ For example, one node can capture the images from a camera and send the images t
 
 The main mechanism used by ROS nodes to communicate is by sending and receiving **messages**. The **messages** are organized into specific categories called **topics**. Nodes may **publish** messages on a particular topic or **subscribe** to a topic to receive information.
 
+#### Introducing TurtleSim
+
 Let us run 'turtlesim_node' node from 'turtlesim' package using `rosrun`:
 
 First, get the roscore running:
@@ -190,7 +192,7 @@ You'll see the new turtlesim window.
 You are required go through this [Tutorial](http://wiki.ros.org/ROS/Tutorials/UnderstandingNodes) as well.
 
 
-##### Using roslaunch to run multiple nodes at once
+#### Using roslaunch to run multiple nodes at once
 
 Usage:
 ```bash
@@ -252,7 +254,7 @@ rostopic pub /turtlesim1/turtle1/cmd_vel geometry_msgs/Twist -r 1 -- '[2.0, 0.0,
 We see that the two turtles are moving in a circle, even though the above command was passed to only turtlesim1. That is because the launch file has been written in such a way that the turtlesim2 mimics the turtlesim1.
 
 
-#### Topics
+### Topics
 You use a topic when you need to send a data stream. The data stream is unidirectional. Some nodes can **publish** on the topic, some nodes can **subscribe** to the topic. There is no response from a subscriber to a publisher, the data is only going one way.
 
 A topic has a message type. All publishers and subscribers on this topic must use the message type associated with the topic.
@@ -264,7 +266,7 @@ When a node wants to publish something, it will inform the ROS master. When anot
 
 Finally, a node can contain many publishers and subscribers for many different topics.
 
-Go through this [Turtorial](http://wiki.ros.org/ROS/Tutorials/UnderstandingTopics).
+Go through this [Tutorial](http://wiki.ros.org/ROS/Tutorials/UnderstandingTopics).
 
 ## Publisher Subscriber Interface
 
