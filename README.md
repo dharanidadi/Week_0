@@ -1,3 +1,7 @@
+# Episode 0 - A Study in ROSe
+
+## Introduction
+
 **ROS**, which means the Robot Operating System, is a set of software libraries and tools to help you build robot applications. It provides hardware abstraction, device drivers, libraries, visualizers, message-passing, package management, and more. The point of ROS is to create a **robotics standard**, so you don't need to reinvent the wheel anymore when building new robotic software.
 
 ### Main Objectives of this Workshop:
@@ -5,8 +9,7 @@
 1. This will allow you to understand the packages that others have done. So you can take ROS code made by others and understand what is happening and how to modify it for your own purposes
 1. This can serve as an introduction to be able to understand the ROS documentation of complex ROS packages for object recognition, text to speech, navigation and all the other areas where ROS developed code.
 
-
-# EPISODE 0 - A study in ROSe
+## Preliminary Installation
 
 * __Ubuntu Installation__ :
 For using ROS framework, Ubuntu is necessary. So, follow any of the four alternatives for setting up the linux environment:
@@ -22,42 +25,47 @@ For using ROS framework, Ubuntu is necessary. So, follow any of the four alterna
 Here are a few resources that you can refer to in order to get familiar with Linux:
 	* [Video-based Tutorial](https://www.youtube.com/watch?v=IVquJh3DXUA "Introduction to Linux and Basic Linux Commands for Beginners")
 	* [Text-based Tutorial](https://ryanstutorials.net/linuxtutorial/ "Linux Tutorial")
-	
-To install **Terminator**, run the following command in the terminal:  
-```bash
-sudo apt-get install terminator
-```
-It's highly recommended to use this application instead of stock Terminal. You can have tabs or split windows into few terminals.
+
+* __Terminator installation for Ubuntu__:
+
+	It's highly recommended to use Terminator instead of stock Terminal as you can have tabs or split windows into few terminals, which will be very useful throughout.
+
+	To install **Terminator**, run the following command in the terminal:  
+	```bash
+	sudo apt-get install terminator
+	```
 
 * __ROS Installation/setup__:
 	- For Ubuntu 20.04: [ROS Noetic Ninjemys](http://wiki.ros.org/noetic/Installation/Ubuntu)
 	- For Ubuntu 18.04: [ROS Melodic Morena](http://wiki.ros.org/melodic/Installation)    
 Go to a particular link and put your first step in the world of ROS.
 
-***You are free to use a suitabe IDE to write code. The most commonly used IDE is Visual Studio Code. You can install it in your Ubuntu system and install ROS VSCode Extention in the VSCode application.***
+* __IDE Installation__:
+
+	You are free to use a suitabe IDE to write code. The most commonly used IDE is **Visual Studio Code**. You can install it in your Ubuntu system and install **ROS VSCode Extention** in the VSCode application.
 
 
-### **Getting started with the ROS:**
+## **Getting started with the ROS:**
 
 *Now that the installation is done, let’s dive into ROS!*
 
-#### **What is ROS?**
+### **What is ROS?**
 
 ROS is a software framework for writing robot software. The main aim of ROS is to reuse the robotic software across the globe. ROS consists of a collection of tools, libraries, and conventions that aim to simplify the task of creating complex and robust robot behavior across a wide variety of robotic platforms.
 The official definition on ROS wiki is:
 
 *ROS is an open-source, meta-operating system for your robot. It provides the services you would expect from an operating system, including hardware abstraction, low-level device control, implementation of commonly-used functionality, message-passing between processes, and package management. It also provides tools and libraries for obtaining, building, writing, and running code across multiple computers. ROS is similar in some respects to ‘robot frameworks, such as Player, YARP, Orocos, CARMEN, Orca, MOOS, and Microsoft Robotics Studio.*
 
-#### **Basics of ROS**
+### **Basics of ROS**
 
 First of all, let us start with the basics of ROS.
-We are briefing the main concepts below. So, go through the topics in the order that they are mentioned. **Write code on your own. Don't copy paste it directly.**  You will grasp the topics covered better when you try the implementation on your own.It's preferable if you use __Python__ instead of __C++__ as python syntax is easier and more readable and you will need it in future for sure, so, better learn it right now. The assignments will require knowledge of only basic python syntax.
+It would be better if you **write the code on your own instead of copying and pasting it directly.** You will grasp the topics covered better when you try the implementation on your own. It's preferable if you use __Python__ instead of __C++__ as python syntax is easier and more readable.
 
-Go through these two tutorials first <br />
+To start off, these two tutorials will cover aspects such as **creating a ROS Workspace** and **navigating the ROS Filesystem** <br />
 [Configuring your ROS environment](http://wiki.ros.org/ROS/Tutorials/InstallingandConfiguringROSEnvironment) <br />
 [Navigating the ROS filesystem](http://wiki.ros.org/ROS/Tutorials/NavigatingTheFilesystem)
 
-##### **What is a package?** 
+#### **What is a package?** 
 
 ROS uses **packages** to organize its programs. You can think of a package as **all the files that a specific ROS program contains**; all its CPP files, python files, configuration files, compilation files, launch files, and parameter files. All those files in the package are organized with the following structure:
 
@@ -77,7 +85,7 @@ It will take you to the path where the package *package_name* is located. `roscd
 * Packages are the main organizational system of ROS programs
 
 
-##### **Create a package**
+#### **Create a new package**
 
 Until now we’ve been checking the structure of an already-built package. But now, let’s create one ourselves. When we want to create packages, we need to work in a very specific ROS workspace, which is known as the catkin workspace. The **catkin workspace** is the directory in your hard disk where your own ROS packages must reside in order to be usable by ROS. Usually, the catkin workspace directory is called *catkin_ws* .
 
@@ -113,8 +121,6 @@ nano .bashrc	# open the .bashrc file
 Add the command `source ~/catkin_ws/devel/setup.bash` to the end of *.bashrc*.  
 Then, hit <kbd>CTRL</kbd>+<kbd>X</kbd>, then, <kbd>Y</kbd>, to save the changes to the file.
 
-##### Creating a new catkin package
-
 Since your workspace has already been created, navigate to that workspace.
 ```bash
 cd ~/catkin_ws/src
@@ -134,16 +140,16 @@ cd ~/catkin_ws
 catkin_make
 ```
 
-To add the workspace to your ROS environment you need to source the generated setup file:
+To add the workspace to your ROS environment you need to source the generated setup file (if you have not automated the sourcing process):
 ```bash
 . ~/catkin_ws/devel/setup.bash
 ```
 
-Go through these tutorials: <br />
+For more clarity, go through these tutorials: <br />
 [Creating a ROS package](http://wiki.ros.org/ROS/Tutorials/CreatingPackage) <br />
 [Building a ROS package](http://wiki.ros.org/ROS/Tutorials/BuildingPackages)
 
-#### Nodes
+### Nodes
 One of the primary purposes of ROS is to facilitate communication between the ROS nodes. Every program in ROS is called a **node**. Every independent task can be separated into nodes which communicate with each other through channels. These channels are also known as **topics**.
 
 For example, one node can capture the images from a camera and send the images to another node for processing. After processing the image, the second node can send a control signal to a third node for controlling a robotic manipulator in response to the camera view.
