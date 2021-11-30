@@ -440,7 +440,7 @@ Create a new package ```sherlock``` in ```catkin_ws```, which will contain three
 
 1) The first node will publish the following text to the topic ```listen_1```
 
-	**I am not a psychopath.**
+	**I am not a psychopath, Anderson.**
 
 2) The second node will publish the following text to the topic ```listen_2```
 
@@ -450,7 +450,7 @@ Create a new package ```sherlock``` in ```catkin_ws```, which will contain three
 
 4) The third node should display the following statement on the terminal at some frequency.
 
-	**I am not a psychopath. I am a high-functioning sociopath.**
+	**I am not a psychopath, Anderson. I am a high-functioning sociopath.**
 
 5) The launch file will launch all the three nodes
 
