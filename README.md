@@ -164,16 +164,15 @@ The main mechanism used by ROS nodes to communicate is by sending and receiving 
 
 `roscore`:The Main program to initiate ros. It sets up the basic architecture for the channels, allowing nodes to communicate.
 
+`roscd` is used to go to a specific ROS package
+
 `rosrun` is used to run a single ros program  (node).
-
-`roslaunch` is used to automate launching multiple nodes at once.
-
 
 Usage of rosrun command:
 ```bash
 rosrun [package name] [node_name]
 ```
-
+`roslaunch` is used to automate launching multiple nodes at once.
 
 Let us run 'turtlesim_node' node from 'turtlesim' package using `rosrun`:
 
