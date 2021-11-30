@@ -98,7 +98,7 @@ First, build (compile) your workspace. It’s OK to build the *catkin_ws*  even 
 
 ```bash
 cd ~/catkin_ws 	# Navigate to the catkin_ws
-catkin build 	# Build
+catkin_make	# Build
 ```
 Now, let’s add the *catkin_ws*  path. Execute the following command while inside *catkin_ws* :
 
