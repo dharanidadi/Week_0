@@ -373,7 +373,9 @@ cd ~/catkin_ws
 catkin_make	
 ```
 
-Refer to the following for more information [Tutorial](http://wiki.ros.org/ROS/Tutorials/WritingPublisherSubscriber%28python%29)
+Refer to the following for more information on writing publishers and subscribers
+
+[Tutorial](http://wiki.ros.org/ROS/Tutorials/WritingPublisherSubscriber%28python%29)
 
 
 ### Running the Publisher and Subscriber:
@@ -407,5 +409,26 @@ Note that once you stop running the Publisher Node ( Press `Ctrl`+`C` while you'
 
 Go through this [Tutorial](http://wiki.ros.org/ROS/Tutorials/ExaminingPublisherSubscriber) as well.
 
+### Running the publisher and subscriber using a launch file
+
+## Try it out ...
+
+Create a new package with name in the following format NAME_SURNAME. Now, this new package will require three nodes and two launch files.
+
+1) The first node will publish your NAME(string) to the topic name_listener
+
+2) The second node will publish your PHONE NUMBER(int) to the topic num_listener
+
+3) The third node will subscribe both the above topics
+
+4) The first launch file contains two nodes. It contains both of the publisher nodes.
+
+5) The second launch file contains the last subscriber node.
+
+6) Your task is to print an assimilated string in the following format:
+
+If you want to contact NAME, then call on this NUMBER.
+
+NAME and NUMBER should be replaced by your own details.
 
 
