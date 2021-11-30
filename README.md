@@ -4,7 +4,7 @@
 
 **ROS**, which means the Robot Operating System, is a set of software libraries and tools to help you build robot applications. It provides hardware abstraction, device drivers, libraries, visualizers, message-passing, package management, and more. The point of ROS is to create a **robotics standard**, so you don't need to reinvent the wheel anymore when building new robotic software.
 
-<img src="W0_Images/ROS_logo.png ">
+<img src="W0_Images/ROS_logo.png " width=400 height=100>
 
 ### Main Objectives of this Workshop:
 1. The objective of this course is to give you the basic tools and knowledge to be able to understand and create any basic ROS related project. You will be able to move robots, read their sensor data, make the robots perform intelligent tasks, see visual representations of complex data such as laser scans and debug errors in the programs.
