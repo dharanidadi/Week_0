@@ -67,6 +67,8 @@ To start off, these two tutorials will cover aspects such as **creating a ROS Wo
 [Configuring your ROS environment](http://wiki.ros.org/ROS/Tutorials/InstallingandConfiguringROSEnvironment) <br />
 [Navigating the ROS filesystem](http://wiki.ros.org/ROS/Tutorials/NavigatingTheFilesystem)
 
+Next, we shall look at packages.
+
 #### **What is a package?** 
 
 ROS uses **packages** to organize its programs. You can think of a package as **all the files that a specific ROS program contains**; all its CPP files, python files, configuration files, compilation files, launch files, and parameter files. All those files in the package are organized with the following structure:
