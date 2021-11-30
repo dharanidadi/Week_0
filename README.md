@@ -71,18 +71,12 @@ Next, we shall look at packages.
 
 #### **What is a package?** 
 
-ROS uses **packages** to organize its programs. You can think of a package as **all the files that a specific ROS program contains**; all its CPP files, python files, configuration files, compilation files, launch files, and parameter files. All those files in the package are organized with the following structure:
+ROS uses **packages** to organize its programs. Every ROS program that you want to create or execute is organized in a package. You can think of a package as **all the files that a specific ROS program contains**; all its CPP files, python files, configuration files, compilation files, launch files, and parameter files. All those files in the package are organized with the following structure:
 
 * __launch__ folder: Contains launch files
 * __src folder__: Source files (CPP, python)
 * __CMakeLists.txt__: List of CMake rules for compilation
 * __package.xml__: Package information and dependencies
-
-Note that
-* Every ROS program that you want to execute is organized in a package
-* Every ROS program that you create will have to be organized in a package
-* Packages are the main organizational system of ROS programs
-
 
 #### **Create a new package**
 
