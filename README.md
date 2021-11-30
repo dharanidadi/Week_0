@@ -411,6 +411,25 @@ Go through this [Tutorial](http://wiki.ros.org/ROS/Tutorials/ExaminingPublisherS
 
 ### Running the publisher and subscriber using a launch file
 
+Create a file ```pubsub.launch``` in the ```launch``` folder of ```beginner_tutorials```
+
+Add the following code.
+
+```xml
+<launch>
+<node name="Publisher" pkg="beginner_tutorials" type="talker.py"/>
+<node name="Subscriber" pkg="beginner_tutorials" type="listener.py"/>
+</launch>
+```
+
+```name``` refers to the name of the node, ```pkg``` refers to the name of the package in which the node is present in, ```type``` is the name of the node file
+
+On executing ```roslaunch beginner_tutorials pubsub.launch```, you will be able to see **Publisher** and **Subscriber** in the list of Nodes. 
+
+To see the data that is being transmitted through the ```chatter``` topic, execute ```rostopic echo chatter``` in another terminal.
+
+Note that in this method, there is no need to make sure that ```roscore``` is running in the background as ```roscore``` will begin running automatically when the launch file is run.
+
 ## Try it out ...
 
 Create a new package with name in the following format NAME_SURNAME. Now, this new package will require three nodes and two launch files.
