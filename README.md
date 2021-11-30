@@ -164,7 +164,6 @@ The main mechanism used by ROS nodes to communicate is by sending and receiving 
 
 `roslaunch` is used to automate launching multiple nodes at once.
 
-There are tools like `rostopic` and `rqt_graph` which can be used to visualize the nodes’ communication in the current channels and their message transactions.
 
 Usage of rosrun command:
 ```bash
@@ -185,6 +184,7 @@ rosrun turtlesim turtlesim_node
 You'll see the new turtlesim window.
 
 You are required go through this [Tutorial](http://wiki.ros.org/ROS/Tutorials/UnderstandingNodes) as well.
+
 
 ##### Using roslaunch to run multiple nodes at once
 
@@ -262,7 +262,7 @@ Finally, a node can contain many publishers and subscribers for many different t
 
 Go through this [Turtorial](http://wiki.ros.org/ROS/Tutorials/UnderstandingTopics).
 
-#### Publisher Subscriber Interface
+## Publisher Subscriber Interface
 
 Message passing in ROS happens with the Publisher Subscriber Interface provided by ROS library functions.
 
@@ -270,7 +270,7 @@ Creating a publisher or subscriber node is just like creating any other node. <b
 Go to the package (where you want to create these nodes), make a new directory or folder (Let us follow the convention followed in the official ROS tutorials and call the new folder "scripts"). Add the publisher node python script and the subscriber node python script in this new folder scripts.
 
 
-##### Writing a simple Publisher Node
+### Writing a simple Publisher Node
 
 This is a basic publisher node python script (taken from the official ROS tutorials from the website, and comments are added to help you understand the working of each line):
 
@@ -315,7 +315,7 @@ if __name__ == '__main__':
         pass
 
 ```
-##### Writing a simple Subscriber Node:
+### Writing a simple Subscriber Node:
 
 This is a basic subscriber node python script (taken from the official ROS tutorials from the website, and comments are added to help you understand the working of each line):
 
@@ -370,7 +370,7 @@ catkin_make
 
 You are required to go through this [Tutorial](http://wiki.ros.org/ROS/Tutorials/WritingPublisherSubscriber%28python%29) as well.
 
-##### Running the Publisher and Subscriber:
+### Running the Publisher and Subscriber:
 
 Make sure the roscore is running
 ```bash
