@@ -348,6 +348,8 @@ if __name__ == '__main__':
     listener()   
 ```
 
+### Making the scripts executable
+
 We have to make the publisher and subscriber python scripts executable. The command for that:
 
 ```python
