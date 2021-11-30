@@ -78,12 +78,7 @@ ROS uses **packages** to organize its programs. You can think of a package as **
 * __CMakeLists.txt__: List of CMake rules for compilation
 * __package.xml__: Package information and dependencies
 
-To go to any ROS package, ROS gives you a command called `roscd`. Type:
-
-
-
-It will take you to the path where the package *package_name* is located. `roscd`  is a command which will get you to a ROS package location. `ls`is a command that lists the content of a folder.
-
+Note that
 * Every ROS program that you want to execute is organized in a package
 * Every ROS program that you create will have to be organized in a package
 * Packages are the main organizational system of ROS programs
@@ -168,7 +163,9 @@ The main mechanism used by ROS nodes to communicate is by sending and receiving 
 
 Usage of roscd command:
 
-```roscd <package_name>```
+```
+roscd <package_name>
+```
 
 `rosrun` is used to run a single ros program  (node).
 
