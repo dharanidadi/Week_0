@@ -148,13 +148,6 @@ For more clarity, go through these tutorials: <br />
 [Creating a ROS package](http://wiki.ros.org/ROS/Tutorials/CreatingPackage) <br />
 [Building a ROS package](http://wiki.ros.org/ROS/Tutorials/BuildingPackages)
 
-### Nodes
-One of the primary purposes of ROS is to facilitate communication between the ROS nodes. Every program in ROS is called a **node**. Every independent task can be separated into nodes which communicate with each other through channels. These channels are also known as **topics**.
-
-For example, one node can capture the images from a camera and send the images to another node for processing. After processing the image, the second node can send a control signal to a third node for controlling a robotic manipulator in response to the camera view.
-
-The main mechanism used by ROS nodes to communicate is by sending and receiving **messages**. The **messages** are organized into specific categories called **topics**. Nodes may **publish** messages on a particular topic or **subscribe** to a topic to receive information.
-
 **Important ROS Commands**:
 
 `roscore`:The Main program to initiate ros. It sets up the basic architecture for the channels, allowing nodes to communicate.
@@ -174,6 +167,13 @@ Usage of rosrun command:
 rosrun [package name] [node_name]
 ```
 `roslaunch` is used to automate launching multiple nodes at once.
+
+### Nodes
+One of the primary purposes of ROS is to facilitate communication between the ROS nodes. Every program in ROS is called a **node**. Every independent task can be separated into nodes which communicate with each other through channels. These channels are also known as **topics**.
+
+For example, one node can capture the images from a camera and send the images to another node for processing. After processing the image, the second node can send a control signal to a third node for controlling a robotic manipulator in response to the camera view.
+
+The main mechanism used by ROS nodes to communicate is by sending and receiving **messages**. The **messages** are organized into specific categories called **topics**. Nodes may **publish** messages on a particular topic or **subscribe** to a topic to receive information.
 
 Let us run 'turtlesim_node' node from 'turtlesim' package using `rosrun`:
 
