@@ -12,8 +12,15 @@
 1. This can serve as an introduction to be able to understand the ROS documentation of complex ROS packages for object recognition, text to speech, navigation and all the other areas where ROS developed code.
 
 ## Preliminary Installation
+**WARNING** - The following installation procedures can make you do stuff like this ...
 
 <img src="W0_Images/Sherlock_beating.gif">
+
+or this...
+
+<img src="W0_Images/Sherlock_screaming.gif">
+
+or even worse.
 
 * __Ubuntu Installation__ :
 For using ROS framework, Ubuntu is necessary. So, follow any of the four alternatives for setting up the linux environment:
