@@ -455,7 +455,7 @@ To see the data that is being transmitted through the ```chatter``` topic, execu
 
 Note that in this method, there is no need to make sure that ```roscore``` is running in the background as ```roscore``` will begin running automatically when the launch file is run.
 
-## Now enough chatter. Time to do ...
+## Now, enough chatter. Time to do ...
 
 Create a new package ```sherlock``` in ```catkin_ws```, which will contain three nodes and a launch file.
 
