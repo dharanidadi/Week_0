@@ -18,7 +18,7 @@
 	<li> <a href="#Getting"> Getting started with the ROS </a> </li>
 	<li> <a href="#PubSub">Publisher-Subscriber Interface </a></li>
 	<ol>
-		<li><a href="#Publisher"> Writing a simple Pubscriber Node </a></li>
+		<li><a href="#Publisher"> Writing a simple Publisher Node </a></li>
 		<li><a href="#Subscriber"> Writing a simple Subscriber Node </a></li>
 	</ol>
 		
