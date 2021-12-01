@@ -467,7 +467,7 @@ Create a new package ```sherlock``` in ```catkin_ws```, which will contain three
 
 5) The launch file will launch all the three nodes.
 
-<img src="W0_Images/Sherlock.png" width=400 height=220>
+<img src="W0_Images/Sociopath.gif" width=400 height=220>
 
 Have fun !
 
