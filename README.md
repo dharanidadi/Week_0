@@ -26,7 +26,7 @@
 
 ## A note on Optional reading -
 
-Optional reading material has been provided in the form of links in many places with 'Optional reading' mentioned next to them. These are kept in case you wish to know about those topics in detail or if you did not understand the content properly. Effort has been made to keep the documentation self-contained, but we are human too ...
+Optional reading material has been provided in the form of links in many places with **Optional Reading** mentioned next to them/ above them. These are kept in case you wish to know about those topics in detail or if you did not understand the content properly. Effort has been made to keep the documentation self-contained, but we are human too ...
 
 ## Preliminary Installation <a name="Preliminary"></a>
 **WARNING** - The following installation procedures can make you do stuff like this ...
@@ -162,8 +162,10 @@ To add the workspace to your ROS environment you need to source the generated se
 . ~/catkin_ws/devel/setup.bash
 ```
 
-For more clarity, go through these tutorials: <br />
-[Creating a ROS package](http://wiki.ros.org/ROS/Tutorials/CreatingPackage) <br />
+**Optional Reading** 
+
+[Creating a ROS package](http://wiki.ros.org/ROS/Tutorials/CreatingPackage)
+
 [Building a ROS package](http://wiki.ros.org/ROS/Tutorials/BuildingPackages)
 
 **Important ROS Commands**:
@@ -212,7 +214,7 @@ rosrun turtlesim turtlesim_node
 ```
 You'll see the new turtlesim window.
 
-Refer to the material in the following link [Tutorial](http://wiki.ros.org/ROS/Tutorials/UnderstandingNodes) as well.
+**Optional Reading**- [Understanding Nodes](http://wiki.ros.org/ROS/Tutorials/UnderstandingNodes)
 
 
 #### Using roslaunch to run multiple nodes at once
@@ -284,7 +286,7 @@ When a node wants to publish something, it will inform the ROS master. When anot
 
 Finally, a node can contain many publishers and subscribers for many different topics.
 
-For more information about topics, refer to the [Tutorial](http://wiki.ros.org/ROS/Tutorials/UnderstandingTopics).
+**Optional Reading-** [Understanding Topics](http://wiki.ros.org/ROS/Tutorials/UnderstandingTopics).
 
 ## Publisher-Subscriber Interface <a name="PubSub"></a>
 
@@ -399,9 +401,7 @@ cd ~/catkin_ws
 catkin_make	
 ```
 
-Refer to the following for more information on writing publishers and subscribers
-
-[Tutorial](http://wiki.ros.org/ROS/Tutorials/WritingPublisherSubscriber%28python%29)
+**Optional Reading-** [Writing Publisher and Subscriber](http://wiki.ros.org/ROS/Tutorials/WritingPublisherSubscriber%28python%29)
 
 
 ### Running the Publisher and Subscriber:
@@ -433,7 +433,7 @@ You can see that 'heard hello world' is being printed. The Subscriber Node is ru
 
 Note that once you stop running the Publisher Node ( Press `Ctrl`+`C` while you're in the terminal that is running the Publisher Node), the Subscriber Node stops running as well. 
 
-Go through this [Tutorial](http://wiki.ros.org/ROS/Tutorials/ExaminingPublisherSubscriber) as well.
+**Optional Reading-** [Examining Publisher and Subscriber](http://wiki.ros.org/ROS/Tutorials/ExaminingPublisherSubscriber) as well.
 
 ### Running the publisher and subscriber using a launch file
 
