@@ -15,6 +15,10 @@
 
 1.[Preliminary Installation]()
 
+## A note on Optional reading -
+
+Optional reading material has been provided in the form of links in many places with 'Optional reading' mentioned next to them. These are kept in case you wish to know about those topics in detail or if you did not understand the content properly. Effort has been made to keep the documentation self-contained, but we are human too ...
+
 ## Preliminary Installation <a name=""></a>
 **WARNING** - The following installation procedures can make you do stuff like this ...
 
@@ -37,7 +41,7 @@ For using ROS framework, Ubuntu is necessary. So, follow any of the four alterna
 **The Construct website** : You are also free to use [**theconstructsim**](https://www.theconstructsim.com/) without having to install anything. The Construct is an online platform that supports ROS development.
 
 * __Get familiar with Linux__:
-Here are a few resources that you can refer to in order to get familiar with Linux:
+Here are a few additional resources that you can refer to in order to get familiar with Linux:
 	* [Video-based Tutorial](https://www.youtube.com/watch?v=IVquJh3DXUA "Introduction to Linux and Basic Linux Commands for Beginners")
 	* [Text-based Tutorial](https://ryanstutorials.net/linuxtutorial/ "Linux Tutorial")
 
