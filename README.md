@@ -31,11 +31,7 @@ Optional reading material has been provided in the form of links in many places 
 ## Preliminary Installation <a name="Preliminary"></a>
 **WARNING** - The following installation procedures can make you do stuff like this ...
 
-<img src="W0_Images/Sherlock_beating.gif">
-
-or this...
-
-<img src="W0_Images/Sherlock_screaming.gif">
+<img src="W0_Images/Sherlock_beating.gif" height=300> <img src="W0_Images/Sherlock_screaming.gif" height=300>
 
 or even worse.
 
