@@ -13,6 +13,8 @@
 
 ## Preliminary Installation
 
+<img src="W0_Images/Sherlock_beating.gif">
+
 * __Ubuntu Installation__ :
 For using ROS framework, Ubuntu is necessary. So, follow any of the four alternatives for setting up the linux environment:
 (It's Preferable that you install Ubuntu 20.04)<br />
