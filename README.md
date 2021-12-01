@@ -13,13 +13,13 @@
 
 ## Table of Contents:
 
-1.[Preliminary Installation]()
+
 
 ## A note on Optional reading -
 
 Optional reading material has been provided in the form of links in many places with 'Optional reading' mentioned next to them. These are kept in case you wish to know about those topics in detail or if you did not understand the content properly. Effort has been made to keep the documentation self-contained, but we are human too ...
 
-## Preliminary Installation <a name=""></a>
+## Preliminary Installation <a name="Preliminary"></a>
 **WARNING** - The following installation procedures can make you do stuff like this ...
 
 <img src="W0_Images/Sherlock_beating.gif">
