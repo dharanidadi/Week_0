@@ -106,9 +106,7 @@ ROS uses **packages** to organize its programs. Every ROS program that you want 
 
 #### **Create a new package**
 
-Let’s create one ourselves. When we want to create packages, we need to work in a very specific ROS workspace, which is known as the catkin workspace. The **catkin workspace** is the directory in your hard disk where your own ROS packages must reside in order to be usable by ROS. Usually, the catkin workspace directory is called *catkin_ws* .
-
-Usually, the *catkin_ws* is created in the home folder of your user account. The catkin workspace has been already created and initialized for you.
+Let’s create one ourselves. When we want to create packages, we need to work in a specific ROS workspace. We shall use the *catkin_ws* that has been created already.
 
 Go to the src folder inside *catkin_ws* :
 
