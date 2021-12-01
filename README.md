@@ -13,7 +13,16 @@
 
 ## Table of Contents:
 
-
+<ol>
+	<li> <a href="#Preliminary"> Preliminary Installation </a> </li>
+	<li> <a href="#Getting"> Getting started with the ROS </a> </li>
+	<li> <a href="#PubSub">Publisher-Subscriber Interface </a></li>
+	<ol>
+		<li><a href="#Publisher"> Writing a simple Pubscriber Node </a></li>
+		<li><a href="#Subscriber"> Writing a simple Subscriber Node </a></li>
+	</ol>
+		
+</ol>
 
 ## A note on Optional reading -
 
@@ -64,7 +73,7 @@ Go to a particular link and put your first step in the world of ROS.
 	You are free to use a suitabe IDE to write code. The most commonly used IDE is **Visual Studio Code**. You can install it in your Ubuntu system and install **ROS VSCode Extention** in the VSCode application.
 
 
-## **Getting started with the ROS:**
+## **Getting started with the ROS:**<a name="Getting"></a>
 
 *Now that the installation is done, let’s dive into ROS!*
 
@@ -277,7 +286,7 @@ Finally, a node can contain many publishers and subscribers for many different t
 
 For more information about topics, refer to the [Tutorial](http://wiki.ros.org/ROS/Tutorials/UnderstandingTopics).
 
-## Publisher-Subscriber Interface
+## Publisher-Subscriber Interface <a name="PubSub"></a>
 
 Message passing in ROS happens with the Publisher-Subscriber Interface provided by ROS library functions.
 
@@ -290,7 +299,7 @@ Creating a publisher or subscriber node is just like creating any other node. <b
 3. Create python script files for a publisher ```talker.py``` and a subscriber ```listener.py```
 
 
-### Writing a simple Publisher Node
+### Writing a simple Publisher Node <a name="Publisher"></a>
 
 This is a basic publisher node python script ```talker.py```(taken from the official ROS tutorials from the website, and comments are added to help you understand the working of each line):
 
@@ -335,7 +344,7 @@ if __name__ == '__main__':
         pass
 
 ```
-### Writing a simple Subscriber Node:
+### Writing a simple Subscriber Node <a name="Subscriber"></a>
 
 This is a basic subscriber node python script ```listener.py``` (taken from the official ROS tutorials from the website, and comments are added to help you understand the working of each line):
 
