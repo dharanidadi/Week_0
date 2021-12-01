@@ -26,7 +26,7 @@
 
 ## A note on Optional reading -
 
-Optional reading material has been provided in the form of links in many places with **Optional Reading** mentioned next to them/ above them. These are kept in case you wish to know about those topics in detail or if you did not understand the content properly. Effort has been made to keep the documentation self-contained, but we are human too ...
+Optional reading material has been provided in the form of links in many places with **Optional Reading** mentioned next to them/ above them. These are kept in case you wish to know about those topics in detail or if you did not understand the content properly. In case you do not get stuck at any point, we would advise you to read them after you have gone through the entire documentation. If you do get stuck at some point, then you may refer them. Effort has been made to keep the documentation self-contained, but we are human too ...
 
 ## Preliminary Installation <a name="Preliminary"></a>
 **WARNING** - The following installation procedures can make you do stuff like this ...
@@ -273,7 +273,8 @@ We see that the two turtles are moving in a circle, even though the above comman
 
 
 ### Topics
-You use a topic when you need to send a data stream. The data stream is unidirectional. Some nodes can **publish** on the topic, some nodes can **subscribe** to the topic. There is no response from a subscriber to a publisher, the data is only going one way.
+
+You use a topic when you need to send a data stream. The data stream is unidirectional. Some nodes called **Publishers** can publish on the topic, some nodes called **Subscribers** can subscribe to the topic. 
 
 A topic has a message type. All publishers and subscribers on this topic must use the message type associated with the topic.
 
