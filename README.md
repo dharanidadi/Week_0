@@ -274,9 +274,9 @@ We see that the two turtles are moving in a circle, even though the above comman
 
 ### Topics
 
-You use a topic when you need to send a data stream. The data stream is unidirectional. Some nodes called **Publishers** can publish on the topic, some nodes called **Subscribers** can subscribe to the topic. 
+A topic is simply a medium of exchange of data (like a channel). Some nodes called **Publishers** can publish data on the topic, some nodes called **Subscribers** can subscribe to the data on the topic.
 
-A topic has a message type. All publishers and subscribers on this topic must use the message type associated with the topic.
+A topic has a message type (similar to the data type of a variable). All publishers and subscribers on this topic must publish/subscribe data of the associated message type.
 
 You can create a publisher or subscriber in any ROS supported language you want, directly inside ROS nodes.
 
